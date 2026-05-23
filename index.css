@@ -2597,7 +2597,8 @@ span.active {
 
 .confetti-img{
     width: 100%;
-    margin-top: -30%;
+    margin-top: 10%;
+    height: 20%;
 }
 
 }
@@ -3724,7 +3725,7 @@ span.active {
 /* PERSONAL BEST / HIGHSCORE PAGE  */
 
 .personal_best_section{
-    display: none; 
+    display: block; 
 }
 
 .personal_best_section.active{
@@ -3992,6 +3993,7 @@ span.active {
 
 .confetti-img{
     width: 100%;
-    margin-top: -30%;
+    margin-top: 10%;
+    height: 20%;
 }
 }

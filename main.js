@@ -17,7 +17,9 @@ startBtn.onclick = () => {
   hiddenInput.focus();
 }
 
-  
+let difficultyChosen = false;
+
+let timeChosen = false;  
 
 /* Restart Button */
 restartBtn.addEventListener("click", () => {
@@ -110,6 +112,9 @@ easyBtn.addEventListener("click", () =>{
   
   loadTextEasy();
   resetTest();
+  difficultyChosen = true;
+  checkSelections();
+
 
 });
 
@@ -130,6 +135,8 @@ mediumBtn.addEventListener("click", () => {
     
   resetTest();
   loadTextMedium();
+  difficultyChosen = true;
+  checkSelections();
 });
 
 /* HARD MODE */
@@ -148,6 +155,8 @@ hardBtn.addEventListener("click", () => {
     
   resetTest();
   loadTextHard();
+  difficultyChosen = true;
+  checkSelections();
 });
 
 
@@ -190,7 +199,8 @@ firstSec.addEventListener("click", () => {
   setTime(60);
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
-  
+  difficultyChosen = true;
+  checkSelections();
 });
 
 
@@ -198,13 +208,18 @@ secondSec.addEventListener("click", () => {
   setTime(30);
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
+  difficultyChosen = true;
+  checkSelections();
 });
+
 
 
 threeSec.addEventListener("click", () => {
   setTime(15);
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
+  difficultyChosen = true;
+  checkSelections();
   
 });
 
@@ -655,6 +670,26 @@ optionsMode.forEach(option => {
 
 const hiddenInput = document.getElementById("hiddenInput");
 
+hiddenInput.addEventListener("input", (e) => {
+
+  const key = e.target.value.slice(-1);
+
+  console.log(key);
+
+});
+
+
+
+function checkSelections() {
+
+  if (difficultyChosen && timeChosen) {
+
+    hiddenInput.focus();
+
+  }
+
+}
+
 /* Typing Area */
 
 let index = 0;
@@ -662,7 +697,7 @@ let index = 0;
 document.addEventListener("keydown", (e) => {
   const key = e.key;
   e.preventDefault();
-  hiddenInput.focus();
+  
 
   if(time === 0 && started) return;
 
