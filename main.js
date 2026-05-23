@@ -14,6 +14,7 @@ const restartBtn = document.getElementById("restartBtn");
 startBtn.onclick = () => {
   overLay.classList.add("active");
   document.body.classList.remove("no-scroll");
+  hiddenInput.focus();
 }
 
   
@@ -652,6 +653,8 @@ optionsMode.forEach(option => {
 
 })
 
+const hiddenInput = document.getElementById("hiddenInput");
+
 /* Typing Area */
 
 let index = 0;
@@ -659,7 +662,7 @@ let index = 0;
 document.addEventListener("keydown", (e) => {
   const key = e.key;
   e.preventDefault();
-
+  hiddenInput.focus();
 
   if(time === 0 && started) return;
 
