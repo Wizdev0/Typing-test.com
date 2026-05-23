@@ -179,7 +179,7 @@ function resetTest() {
 
 function checkSelections() {
   if (difficultyChosen && timeChosen) {
-    hiddenInput.focus();
+    hiddenInput.focus({ preventScroll: true });
   }
 }
 
@@ -284,7 +284,7 @@ function handleTyping(key) {
 startBtn.onclick = () => {
   overLay.classList.add("active");
   document.body.classList.remove("no-scroll");
-  hiddenInput.focus();
+  hiddenInput.focus({ preventScroll: true }); 
 };
 
 easyBtn.addEventListener("click", () => { fetchPassage("easy"); resetTest(); difficultyChosen = true; checkSelections(); });

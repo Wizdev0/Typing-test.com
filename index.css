@@ -388,10 +388,17 @@ body.no-scroll{
 }
 
 #hiddenInput{
-  position: absolute;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
   opacity: 0;
+  z-index: -1;
   pointer-events: none;
 }
+
 
 .text{
     width: 90%;
