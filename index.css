@@ -3725,7 +3725,7 @@ span.active {
 /* PERSONAL BEST / HIGHSCORE PAGE  */
 
 .personal_best_section{
-    display: block; 
+    display: none; 
 }
 
 .personal_best_section.active{
