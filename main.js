@@ -338,6 +338,43 @@ optionsMode.forEach(option => {
   });
 });
 
+// --- MOBILE KEYBOARD AUTO-SCROLL/PUSH ENGINE ---
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", () => {
+    // Get the total layout height vs what is actually visible
+    const totalHeight = window.innerHeight;
+    const visibleHeight = window.visualViewport.height;
+    
+    // Target your main active typing wrapper panel
+    const typingWrapper = document.querySelector(".typing_section"); 
+    
+    if (!typingWrapper) return;
+
+    // If the visible height is significantly less than total height, the keyboard is open!
+    if (visibleHeight < totalHeight * 0.85) {
+      // Calculate how much space the keyboard is occupying
+      const keyboardHeight = totalHeight - visibleHeight;
+      
+      // Shift the container up or add padding to the bottom to push the text up
+      typingWrapper.style.transform = `translateY(-${keyboardHeight * 0.4}px)`;
+      typingWrapper.style.transition = "transform 0.2s ease-out";
+    } else {
+      // Keyboard is closed -> Reset layout position smoothly
+      typingWrapper.style.transform = "translateY(0)";
+    }
+  });
+}
+
+/* Inside your handleTyping(key) function, right after index++ */
+const currentSpan = letters[index];
+if (currentSpan) {
+  // Smoothly scroll the active word into the center of the text box viewport
+  currentSpan.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
 // --- GLOBAL RESTART TRIGGERS ---
 const globalRestarts = [restartBtn, firstResBtn, normResBtn, personalBstRestartBtn];
 globalRestarts.forEach(btn => {
