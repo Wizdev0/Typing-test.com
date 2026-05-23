@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing test speed</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="Assets/images/favicon-32x32.png">
+    <script type="module" src="main.js"></script>
+</head>
+<body class="no-scroll"> 
+    <section class="typing_section" id="typingSection">
+    
+        <!-- Header -->
+        <div class="head">
+
+            <!-- Left part of the header -->
+            <div class="logo-and-writeup">
+
+                <img src="Assets/images/logo-small.svg" alt="Image of a keyboard" class="logo">
+
+                <div class="logo-writeup">
+                    <h1 class="logo-wrtup-h1">
+                        Typing Speed Test
+                    </h1>
+                    <p class="logo-wrtup-p">
+                        Type as fast as you can in 60 seconds
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right part of the header -->
+            <div class="personal-best">
+
+                <img src="Assets/images/icon-personal-best.svg" alt="" class="personal-best-image">
+
+                <p class="personal-best-p"> <span class="personal-class">Personal</span>
+                     best: <span class="numb" id="bestNumb">00</span> <span class="per-2">WPM</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Second header -->
+        <div class="sub-header">
+
+            <!-- Left side of the second-header -->
+            <div class="timer-wpm-accu">
+
+                <p class="wpm">
+                    WPM: <span class="wpm-fig" id="wpmFig">00</span>
+                </p>
+
+                <p class="accu">
+                    Accuracy: <span class="accu-fig" id="accuFig">0</span><span class="per">%</span>
+                </p>
+
+                <p class="timer">
+                    Time: <span class="timer-fig">0:<span class="sec" id="sec">00</span></span>
+                </p>
+
+            </div>
+
+            <!-- Right side of the second header -->
+            <div class="diffi-mode">
+
+                <div class="difficulty">
+                    <p class="difficulty-p">Difficulty:</p>
+                    <div class="diffi-btns">
+                        <button class="easy" id="easy_btn">Easy</button>
+                        <button class="medium" id="medium_btn">Medium</button>
+
+                        <button class="hard" id="hard_btn">Hard</button>
+
+                            <!-- Mobile buttons dropdown for difficulty -->
+
+                            <div class="dropdown_diffi">
+
+                                <button class="dropdown_diffi_btn">
+                                    Hard <span><img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></span>
+                                </button>
+
+                                <div class="dropdown_diffi_menu">
+
+
+                                    <label class="option">
+                                        <input type="radio" name="difficulty" id="rad1" data-mode="easyMob">
+                                        <span class="radio"></span>
+                                        Easy
+                                    </label>
+                            
+
+
+                                    <label class="option">
+                                        <input type="radio" name="difficulty" id="rad2" data-mode="mediumMob">
+                                        <span class="radio"></span>
+                                        Medium
+                                    </label>
+
+
+                                    <label class="option">
+                                        <input type="radio" name="difficulty" id="rad1" data-mode="hardMob">
+                                        <span class="radio"></span>
+                                        Hard
+                                    </label>
+
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+
+                <div class="mode">
+                    <p class="mode-p">Mode:</p>
+                    <div class="mode-btns">
+                
+                            <div class="timed-reader">
+                                <button class="timed" id="timed">Timed <img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></button>
+
+                                <div class="sec-int">
+                                    <button class="one-sec-mk" id="oneSecMk">60 Sec</button>
+                                    <button class="two-sec-mk" id="twoSecMk">30 Sec</button>
+                                    <button class="three-sec-mk" id="threeSecMk">15 Sec</button>
+                                </div>
+
+                            </div>
+
+                        <button class="passage" id="passage">Passage</button>
+                    </div>
+
+                            <div class="dropdown_mode">
+
+                                <button class="dropdown_mode_btn">
+                                    Timed <span><img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></span>
+                                </button>
+
+                                <div class="dropdown_mode_menu">
+
+
+                                    <label class="option_mod">
+                                        <input type="radio" name="mode" id="mod1" data-mode="sixtySec">
+                                        <span class="radio_mod"></span>
+                                        60 sec
+                                    </label>
+                            
+
+
+                                    <label class="option_mod">
+                                        <input type="radio" name="mode" id="mod2" data-mode="thirtySec">
+                                        <span class="radio_mod"></span>
+                                        30 sec
+                                    </label>
+
+
+                                    <label class="option_mod">
+                                        <input type="radio" name="mode" id="mod2" data-mode="fifteenSec">
+                                        <span class="radio_mod"></span>
+                                        15 sec
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                </div>
+
+            </div> 
+
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+
+            <p class="text" id="text" tabindex="0"></p>
+            <input type="text" id="hiddenInput" autofocus>
+            <!-- <input id="input" class="input" autofocus> -->
+
+        </div>
+
+        <!-- Restart Button -->
+        <button class="restart-btn" id="restartBtn">
+            Restart Test <img src="Assets/images/icon-restart.svg" alt="Restart icon" width="15px">
+        </button>
+
+        <!-- Overlay (Intro Screen) -->
+        <div class="overlay" id="overLay" >
+            <div class="start-box">
+                <button class="start-btn" id="startBtn">Start Typing Test</button>
+                <p class="start-btn-p">Or click the text and start typing</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FIRST RESULT PAGE -->
+
+    <section class="first_result_section">
+
+        <!-- First result header -->
+        <div class="fst_res_header">
+
+            <!-- Left part of the first result header -->
+            <div class="fst-res-logo-and-writeup">
+
+                <img src="Assets/images/logo-small.svg" alt="Image of a keyboard" class="fst-res-logo">
+
+                <div class="fst-res-logo-writeup">
+                    <h1 class="fst-res-logo-wrtup-h1">
+                        Typing Speed Test
+                    </h1>
+                    <p class="fst-res-logo-wrtup-p">
+                        Type as fast as you can in 60 seconds
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right part of the first result header -->
+            <div class="fst-res-personal-best">
+
+                <img src="Assets/images/icon-personal-best.svg" alt="" class="fst-res-personal-best-image">
+
+                <p class="fst-res-personal-best-p">
+                   <span class="personal-class">Personal</span>best: <span class="numb" id="bestNumb2">00</span> <span class="per-2">WPM</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Main page of the first result -->
+        <div class="fst-res-main-page">
+
+            <div class="fst-res-star-div">
+                <img src="Assets/images/pattern-star-2.svg" alt="A Star" class="fst-res-star2">
+            </div>
+
+            <!-- First result rightup -->
+
+            <div class="fst-res-wrtup">
+                <div class="outer-circle">
+
+                    <div class="middle-circle">
+
+                        <img src="Assets/images/icon-completed.svg" alt="" class="fst-res-checkmrk" width="40px">
+
+                    </div>
+
+                </div>
+                
+
+                <h2 class="fst-res-h2">
+                    Baseline Established!
+                </h2>
+
+                <p class="fst-res-p">
+                    You've set the bar. Now the real challange begins-time to beat it.
+                </p>
+
+                <div class="fst-res-stats">
+
+                    <p class="fst-res-wpm">
+                        WPM: <span class="fst-res-wpm-fig" id="FstResWpm">00</span>
+                    </p>
+
+                    <p class="fst-res-accu">
+                        Accuracy: <span class="fst-res-accu-fig" id="FirstResAccu">0</span>
+                    </p>
+
+                    <p class="fst-res-character">
+                        Characters: <span class="fst-res-char-fig" id="charCount">00/0</span>
+                    </p>
+
+                </div>
+
+                <button class="fst-res-restart-btn" id="firstResRestartBtn">
+                    Beat This Score<img src="Assets/images/icon-restart-2.svg" alt="Restart icon" width="15px" class="fst-res-btn-img">
+                </button>
+
+                
+            </div>
+
+            <div class="fst-res-star1-div">
+                <img src="Assets/images/pattern-star-1.svg" alt="A Star" class="fst-res-star1">
+            </div>
+
+        </div> 
+
+    </section>
+
+
+    <!-- NORMAL RESULT PAGE -->
+
+    <section class="result_section">
+
+        <!-- First result header -->
+        <div class="res_header">
+
+            <!-- Left part of the first result header -->
+            <div class="res-logo-and-writeup">
+
+                <img src="Assets/images/logo-small.svg" alt="Image of a keyboard" class="res-logo">
+
+                <div class="res-logo-writeup">
+                    <h1 class="res-logo-wrtup-h1">
+                        Typing Speed Test
+                    </h1>
+                    <p class="res-logo-wrtup-p">
+                        Type as fast as you can in 60 seconds
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right part of the first result header -->
+            <div class="res-personal-best">
+
+                <img src="Assets/images/icon-personal-best.svg" alt="" class="res-personal-best-image">
+
+                <p class="res-personal-best-p">
+                    <span class="personal-class">Personal</span> best: <span class="numb" id="bestNumb3">00</span> <span class="per-2">WPM</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Main page of the first result -->
+        <div class="res-main-page">
+
+            <div class="res-star-div">
+                <img src="Assets/images/pattern-star-2.svg" alt="A Star" class="res-star2">
+            </div>
+
+            <!-- First result rightup -->
+
+            <div class="res-wrtup">
+                <div class="outer-circle">
+
+                    <div class="middle-circle">
+
+                        <img src="Assets/images/icon-completed.svg" alt="" class="res-checkmrk" width="40px">
+
+                    </div>
+
+                </div>
+                
+
+                <h2 class="res-h2">
+                    Test Complete!
+                </h2>
+
+                <p class="res-p">
+                    Solid run. Keep pushing to beat your high score.
+                </p>
+
+                <div class="res-stats">
+
+                    <p class="res-wpm">
+                        WPM: <span class="res-wpm-fig" id="normResWpm">00</span>
+                    </p>
+
+                    <p class="res-accu">
+                        Accuracy: <span class="res-accu-fig" id="normResAccu">0</span>
+                    </p>
+
+                    <p class="res-character">
+                        Characters: <span class="res-char-fig" id="charCount2">00/0</span>
+                    </p>
+
+                </div>
+
+                <button class="res-restart-btn" id="ResRestartBtn">
+                    Go Again<img src="Assets/images/icon-restart-2.svg" alt="Restart icon" width="15px" class="res-btn-img">
+                </button>
+
+                
+            </div>
+
+            <div class="res-star1-div">
+                <img src="Assets/images/pattern-star-1.svg" alt="A Star" class="res-star1">
+            </div>
+
+        </div> 
+
+    </section>
+
+
+    <!-- PERSONAL BEST / HIGHSCORE PAGE -->
+
+    <section class="personal_best_section">
+
+        <!-- First result header -->
+        <div class="per_bst_header">
+
+            <!-- Left part of the first result header -->
+            <div class="per-bst-logo-and-writeup">
+
+                <img src="Assets/images/logo-small.svg" alt="Image of a keyboard" class="per-bst-logo">
+
+                <div class="per-bst-logo-writeup">
+                    <h1 class="per-bst-logo-wrtup-h1">
+                        Typing Speed Test
+                    </h1>
+                    <p class="per-bst-logo-wrtup-p">
+                        Type as fast as you can in 60 seconds
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right part of the first result header -->
+            <div class="per-bst-personal-best">
+
+                <img src="Assets/images/icon-personal-best.svg" alt="" class="per-bst-personal-best-image">
+
+                <p class="per-bst-personal-best-p">
+                    <span class="personal-class">Personal</span> best: <span class="numb" id="bestNumb4">00</span> <span class="per-3">WPM</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Main page of the first result -->
+        <div class="per-bst-main-page">
+
+            <!-- First result rightup -->
+
+            <div class="per-bst-wrtup">
+                <div class="per-bst-image">
+
+                    <img src="Assets/images/icon-new-pb.svg" alt="" class="per-bst-icon" width="40px">
+
+                </div>
+                
+
+                <h2 class="per-bst-h2">
+                    High Score Smashed!
+                </h2>
+
+                <p class="per-bst-p">
+                    You're getting faster. That was incredible typing.
+                </p>
+
+                <div class="per-bst-stats">
+
+                    <p class="per-bst-wpm">
+                        WPM: <span class="per-bst-wpm-fig" id="perBstWpm">00</span>
+                    </p>
+
+                    <p class="per-bst-accu">
+                        Accuracy: <span class="per-bst-accu-fig" id="perBstAccu">0</span>
+                    </p>
+
+                    <p class="per-bst-character">
+                        Characters: <span class="per-bst-char-fig" id="charCount3">00/0</span>
+                    </p>
+
+                </div>
+
+                <button class="per-bst-restart-btn" id="personalBestRestartBtn">
+                    Beat This Score<img src="Assets/images/icon-restart-2.svg" alt="Restart icon" width="15px" class="per-bst-btn-img">
+                </button>
+
+                <div class="per-bst-celeb-image">
+                    <img src="Assets/images/pattern-confetti.svg" alt="Just a confetti image" class="confetti-img">
+                </div>
+                
+            </div>
+
+        </div> 
+
+    </section> 
+
+
+</body>
+</html>

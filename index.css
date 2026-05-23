@@ -1,0 +1,3997 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(0, 0%, 7%);
+}
+
+body.no-scroll{
+    overflow: hidden;
+}
+
+/* My font family */
+@font-face {
+    font-family: "MyCustomFont";
+    src: url(Assets/fonts/Sora/static/Sora-Regular.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "MyBoldFont";
+    src: url(Assets/fonts/Sora/static/Sora-Bold.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "MySemiBoldFont";
+    src: url(Assets/fonts/Sora/static/Sora-SemiBold.ttf) format("ttf");
+}
+
+/* TYPING SECTION */
+
+/* The header */
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Left part of the header */
+.logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.logo{
+    width: 40px;
+}
+
+.logo-writeup{
+    display: flex;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.personal-best-image{
+    width: 30px;
+}
+
+.personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Second header */
+.sub-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid hsl(240, 1%, 59%);
+    height: 40px;
+}
+
+/* Left side of the second header */
+.timer-wpm-accu{
+    display: flex; 
+    gap: 10px;
+}
+
+/* Word per Minutes */
+.wpm{
+    border-right: 1px solid hsl(240, 1%, 59%);
+    padding: 10px;
+    height: 4px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 5px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.wpm-fig{
+    font-size: 15px;
+    color: #ffff;
+    font-family: "MyBoldFont", sans-serif;
+}
+
+/* Accuracy */
+.accu{
+    border-right: 1px solid hsl(240, 1%, 59%);
+    padding: 10px;
+    height: 4px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 5px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.accu-fig{
+    font-size: 15px;
+    color: hsl(354, 63%, 57%);
+    font-family: "MyBoldFont", sans-serif;
+}
+
+.per{
+    font-size: 15px;
+    color: hsl(354, 63%, 57%);
+    font-family: "MyBoldFont", sans-serif;
+    margin-left: -5px;
+}
+
+/* Timer */
+.timer{
+    padding: 10px;
+    height: 4px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 5px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.timer-fig{
+    font-size: 16px;
+    color: hsl(49, 85%, 70%);
+    font-family: "MyBoldFont", sans-serif;
+}
+
+/* Right side of the second header */
+.diffi-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: -10px;
+    margin-left: -30px;
+    margin-right: 50px;
+}
+
+
+/* Difficulty */
+.difficulty{
+    display: flex;
+    color: #fff;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.difficulty-p{
+    font-family: "MyBoldFont", sans-serif;
+    margin-right: 10px;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.diffi-btns{
+    display: flex;
+    gap: 10px;
+    border-right: 1px solid hsl(240, 1%, 59%);
+    margin-right: 10px;
+}
+
+/* Difficulty buttons */
+
+.easy{
+    padding: 2px;
+    font-size: 12px;
+    width: 45px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.easy:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+.medium{
+    padding: 2px;
+    font-size: 12px;
+    width: 55px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.medium:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+.hard{
+    padding: 2px;
+    font-size: 12px;
+    width: 45px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.hard:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+/* Mode */
+.mode{
+    display: flex;
+    color: #fff;
+    font-family: "MyCustomFont", sans-serif;
+    margin-left: -20px;
+    align-items: center;
+}
+
+.mode-p{
+    font-family: "MyBoldFont", sans-serif;
+    margin-right: 10px;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.mode-btns{
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+    
+}
+
+.mode-btns.active{
+    margin-top: 100px;
+}
+
+
+/* TIMED READER */
+.timed{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.timed:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+
+.sec-int{
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px;
+
+    transition: all 0.5s ease-in;
+}
+
+.sec-int.active{
+    display: flex;
+}
+
+.one-sec-mk{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.two-sec-mk{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.three-sec-mk{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    z-index: 20000;
+}
+
+.passage{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    height: 22px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.passage:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+/* Main */
+
+.main{
+    border-bottom: 1px solid hsl(240, 1%, 59%);
+    margin-bottom: 20px;
+}
+
+#hiddenInput{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.text{
+    width: 90%;
+    min-height: 200px;   
+    padding: 20px;
+    font-size: 25px;
+    line-height: 1.6;
+    font-family: "MyBoldFont", sans-serif;
+    margin: 20px auto;
+    color: hsl(240, 1%, 59%);
+    letter-spacing: 3px;
+    font-weight: 700px;
+}
+
+span.active {
+  border-bottom: 2px solid yellow;
+}
+
+/* Restart button */
+.restart-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 9px;
+    gap: 5px;
+    font-family: "MySemiBoldFont", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: hsl(240, 3%, 46%);
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* Overlay (Intro Screen) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(5px);     
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.active{
+    display: none;
+}
+
+.start-box {
+  text-align: center;
+  font-family: "MySemiBoldFont", sans-serif;
+}
+
+.start-btn-p{
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.start-btn {
+  background: #3b82f6;
+  padding: 12px 24px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  
+}
+
+/* FIRST RESULT PAGE */
+
+
+.first_result_section{
+    display: none;
+}
+
+.first_result_section.active{
+    display: block;
+}
+
+/* Typing section */
+.typing_section{
+    display: block; /* changed from block to none */
+}
+
+.typing_section.active{
+    display: none;
+}
+
+
+/* The header of the first result */
+.fst_res_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.fst-res-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.fst-res-logo{
+    width: 40px;
+}
+
+.fst-res-logo-writeup{
+    display: flex;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.fst-res-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.fst-res-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.fst-res-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.fst-res-personal-best-image{
+    width: 30px;
+}
+
+.fst-res-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the first result */
+.fst-res-main-page{
+    margin-top: 50px;
+}
+
+.fst-res-star2{
+    margin-left: 40px;
+    margin-top: 70px;
+}
+
+.fst-res-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -100px;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.fst-res-checkmrk{
+    width: 40px;
+}
+
+.fst-res-h2{
+    color: #fff;
+    font-size: 25px;
+}
+
+.fst-res-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.fst-res-stats{
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.fst-res-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+}
+
+.fst-res-wpm-fig{
+    color: #fff;
+    font-weight: 600;
+}
+
+.fst-res-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+}
+
+.fst-res-accu-fig{
+    color: red;
+    font-weight: 600;
+}
+
+.fst-res-per{
+    color: red;
+    font-weight: 600;
+    margin-top: -24px;
+    margin-left: 25px;
+}
+
+.fst-res-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+}
+
+.fst-res-char-fig{
+    color: hsl(140, 63%, 57%);
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.fst-res-restart-btn{
+    width: 160px;
+    display: flex;
+    padding: 9px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.fst-res-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.fst-res-star1{
+    margin-right: 60px;
+    margin-top: -70px;
+}
+
+
+/* NORMAL RESULT PAGE */
+.result_section{
+    display: none;
+}
+
+.result_section.active{
+    display: block;
+}
+
+/* The header of the normal result */
+.res_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.res-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.res-logo{
+    width: 40px;
+}
+
+.res-logo-writeup{
+    display: flex;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.res-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.res-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.res-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.res-personal-best-image{
+    width: 30px;
+}
+
+.res-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the first result */
+.res-main-page{
+    margin-top: 50px;
+}
+
+.res-star2{
+    margin-left: 40px;
+    margin-top: 70px;
+}
+
+.res-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -100px;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.res-checkmrk{
+    width: 40px;
+}
+
+.res-h2{
+    color: #fff;
+    font-size: 25px;
+}
+
+.res-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.res-stats{
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.res-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+}
+
+.res-wpm-fig{
+    color: #fff;
+    font-weight: 600;
+}
+
+.res-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+}
+
+.res-accu-fig{
+    color: red;
+    font-weight: 600;
+}
+
+.res-per{
+    color: red;
+    font-weight: 600;
+    margin-top: -24px;
+    margin-left: 25px;
+}
+
+.res-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+}
+
+.res-char-fig{
+    color: hsl(140, 63%, 57%);
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.res-restart-btn{
+    width: 110px;
+    display: flex;
+    padding: 9px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.res-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.res-star1{
+    margin-right: 60px;
+    margin-top: -70px;
+}
+
+/* PERSONAL BEST / HIGHSCORE PAGE  */
+
+.personal_best_section{
+    display: none; 
+}
+
+.personal_best_section.active{
+    display: block; 
+}
+
+/* The header of the personal best */
+.per_bst_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.per-bst-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.per-bst-logo{
+    width: 40px;
+}
+
+.per-bst-logo-writeup{
+    display: flex;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.per-bst-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.per-bst-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.per-bst-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.per-bst-personal-best-image{
+    width: 30px;
+}
+
+.per-bst-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the first result */
+.per-bst-main-page{
+    margin-top: 5%;
+}
+
+.per-bst-star2{
+    margin-left: 40px;
+    margin-top: 70px;
+}
+
+.per-bst-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -100px;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+
+.per-bst-icon{
+    width: 60px;
+}
+
+.per-bst-h2{
+    color: #fff;
+    font-size: 40px;
+}
+
+.per-bst-p{
+    font-size: 16px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.per-bst-stats{
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.per-bst-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+}
+
+.per-bst-wpm-fig{
+    color: #fff;
+    font-weight: 600;
+}
+
+.per-bst-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+}
+
+.per-bst-accu-fig{
+    color: red;
+    font-weight: 600;
+}
+
+.per-bst-per{
+    color: red;
+    font-weight: 600;
+    margin-top: -24px;
+    margin-left: 25px;
+}
+
+.per-bst-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 120px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+}
+
+.per-bst-char-fig{
+    color: hsl(140, 63%, 57%);
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.per-bst-restart-btn{
+    width: 160px;
+    display: flex;
+    padding: 9px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.confetti-img{
+    width: 100%;
+    margin-top: 40px;
+    height: 50vh;
+}
+
+.selection-arrow{
+    display: none;
+}
+
+.dropdown_diffi{
+    display: none;
+}
+
+.dropdown_mode{
+    display: none;
+}
+
+
+
+/* MOBILE SCREEN SIZE */
+@media only screen and (max-width: 600px) {
+
+/* TYPING SECTION */
+
+.typing_section{
+    display: block; 
+}
+
+.typing_section.active{
+    display: none;
+}
+
+/* The header */
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Left part of the header */
+.logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.logo{
+    width: 40px;
+}
+
+.logo-writeup{
+    display: none;
+}
+
+
+/* Right part of the header */
+.personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.personal-class{
+    display: none;
+}
+
+.personal-best-image{
+    width: 30px;
+}
+
+.personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Second header */
+.sub-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid hsl(240, 1%, 59%);
+    margin-bottom: 30px;
+    height: 145px;
+}
+
+/* Left side of the second header */
+.timer-wpm-accu{
+    display: flex; 
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Word per Minutes */
+.wpm{
+    border-right: 1px solid hsl(240, 1%, 59%);
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 4px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.wpm-fig{
+    font-size: 19px;
+    color: #ffff;
+    font-family: "MyBoldFont", sans-serif;
+   
+}
+
+/* Accuracy */
+.accu{
+    border-right: 1px solid hsl(240, 1%, 59%);
+    padding: 10px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 4px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 150px;
+    margin-left: -20px;
+    margin-top: -3px;
+    
+}
+
+.accu-fig{
+    font-size: 19px;
+    color: hsl(354, 63%, 57%);
+    font-family: "MyBoldFont", sans-serif;
+}
+
+.per{
+    font-size: 19px;
+    color: hsl(354, 63%, 57%);
+    font-family: "MyBoldFont", sans-serif;
+    margin-top: -26px;
+    margin-left: 40px;
+}
+
+/* Timer */
+.timer{
+    padding: 10px;
+    height: 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 4px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: -10px;
+    margin-top: -5px;
+}
+
+.timer-fig{
+    font-size: 19px;
+    color: hsl(49, 85%, 70%);
+    font-family: "MyBoldFont", sans-serif;
+}
+
+/* Right side of the second header */
+.diffi-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+/* Difficulty */
+.difficulty{
+    display: flex;
+    color: #fff;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.difficulty-p{
+    display: none;
+    font-family: "MyBoldFont", sans-serif;
+    margin-right: 10px;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.diffi-btns{
+    display: flex;
+    gap: 10px;
+    border-right: none;
+    margin-right: 10px;
+}
+
+/* Difficulty buttons */
+
+.easy{
+    padding: 2px;
+    font-size: 12px;
+    width: 45px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.easy:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+.medium{
+    padding: 2px;
+    font-size: 12px;
+    width: 55px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.medium:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+.hard{
+    display: none;
+}
+
+/* Dropdown for Difficulty */
+.dropdown_diffi{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown_diffi_btn{
+    padding: 6px;
+    font-size: 16px;
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.selection-arrow{
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.dropdown_diffi_menu {
+  display: none;
+  flex-direction: row;
+  position: absolute;
+
+  background: #222;
+
+  border-radius: 12px;
+  min-width: 40%;
+  margin-top: 40px;
+}
+
+.dropdown_diffi_menu.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu button {
+  font-family: "MyBoldFont", sans-serif;
+  background: transparent;
+  width: 100%;
+  border: none;
+
+  color: white;
+
+  padding: 15px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid #333;
+}
+
+
+.option{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+.option:last-child{
+    border-bottom: none;
+}
+
+.option:hover{
+    background: #333;
+}
+
+.option input{
+    display: none;
+}
+
+.radio{
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    position: relative;
+    background: hsl(214, 100%, 55%);
+}
+
+.option input:checked + .radio:after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hard:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+/* Dropdown for Mode*/
+.dropdown_mode{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown_mode_btn{
+    padding: 6px;
+    font-size: 16px;
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+}
+
+
+.dropdown_mode_menu {
+  display: none;
+  flex-direction: row;
+  position: absolute;
+
+  background: #222;
+
+  border-radius: 12px;
+
+  width: 40%;
+
+  margin-top: 40px;
+}
+
+.dropdown_mode_menu.active {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.option_mod{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+.option_mod:last-child{
+    border-bottom: none;
+}
+
+.option_mod:hover{
+    background: #333;
+}
+
+.option_mod input{
+    display: none;
+}
+
+.radio_mod{
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    position: relative;
+    background: hsl(214, 100%, 55%);
+}
+
+.option_mod input:checked + .radio_mod:after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* NOT REALLY IMPORTANT BUT USEFULL */
+/* Mode */
+.mode{
+    display: flex;
+    color: #fff;
+    font-family: "MyCustomFont", sans-serif;
+    align-items: center;
+}
+
+.mode-p{
+    display: none;
+    font-family: "MyBoldFont", sans-serif;
+    margin-right: 10px;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.mode-btns{
+    display: none;
+    gap: 10px;
+    margin-right: 10px;
+    
+}
+
+.mode-btns.active{
+   margin-top: 10px;
+}
+
+
+/* TIMED READER */
+.timed{
+    padding: 6px;
+    font-size: 15px;
+    width: 150px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.timed:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+.sec-int{
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px;
+
+    transition: all 0.5s ease-in;
+}
+
+.sec-int.active{
+    display: flex;
+}
+
+
+
+.passage{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    height: 22px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.passage:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+
+/* Restart button */
+.restart-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 5px;
+    font-family: "MySemiBoldFont", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: hsl(240, 3%, 46%);
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* Overlay (Intro Screen) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(5px);     
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.active{
+    display: none;
+    overflow: scroll;
+}
+
+
+.start-box {
+  text-align: center;
+  font-family: "MySemiBoldFont", sans-serif;
+  margin-top: -10%;
+}
+
+.start-btn-p{
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+    
+}
+
+.start-btn {
+  background: #3b82f6;
+  padding: 12px 24px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  
+}
+
+
+
+/* FIRST RESULT PAGE */
+
+
+.first_result_section{
+    display: none; 
+}
+
+.first_result_section.active{
+    display: block; 
+}
+
+/* The header of the first result */
+.fst_res_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.fst-res-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.fst-res-logo{
+    width: 40px;
+}
+
+.fst-res-logo-writeup{
+    display: none;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.fst-res-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.fst-res-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.fst-res-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.fst-res-personal-best-image{
+    width: 30px;
+}
+
+.fst-res-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the first result */
+.fst-res-main-page{
+    margin-top: 50px;
+}
+
+.fst-res-star2{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 30px;
+}
+
+.fst-res-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.fst-res-checkmrk{
+    width: 40px;
+}
+
+.fst-res-h2{
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
+
+.fst-res-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.fst-res-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 35px;
+    
+}
+
+.fst-res-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.fst-res-wpm-fig{
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.fst-res-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.fst-res-accu-fig{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.fst-res-per{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 25px;
+}
+
+.fst-res-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90vw;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    font-size: 20px;
+}
+
+.fst-res-char-fig{
+    color: hsl(140, 63%, 57%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.fst-res-restart-btn{
+    min-width: 50vw;
+    display: flex;
+    flex-wrap: none;
+    padding: 15px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.fst-res-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.fst-res-star1{
+    margin-right: 2%;
+    margin-top: 10%;
+    width: 40px;
+}
+
+/* NORMAL RESULT PAGE */
+.result_section{
+    display: none; 
+}
+
+.result_section.active{
+    display: block; 
+}
+
+/* The header of the normal result */
+.res_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.res-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.res-logo{
+    width: 40px;
+}
+
+.res-logo-writeup{
+    display: none;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.res-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.res-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.res-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.res-personal-best-image{
+    width: 30px;
+}
+
+.res-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the Normal result */
+.res-main-page{
+    margin-top: 50px;
+}
+
+.res-star2{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 30px;
+}
+
+.res-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.res-checkmrk{
+    width: 40px;
+}
+
+.res-h2{
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
+
+.res-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.res-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 35px;
+    
+}
+
+.res-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.res-wpm-fig{
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.res-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.res-accu-fig{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.res-per{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 25px;
+}
+
+.res-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90vw;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    font-size: 20px;
+}
+
+.res-char-fig{
+    color: hsl(140, 63%, 57%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.res-restart-btn{
+    min-width: 40vw;
+    display: flex;
+    flex-wrap: none;
+    padding: 15px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.res-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.res-star1{
+    margin-right: 2%;
+    margin-top: 10%;
+    width: 40px;
+}
+
+/* PERSONAL BEST / HIGHSCORE PAGE  */
+
+.personal_best_section{
+    display: none; 
+}
+
+.personal_best_section.active{
+    display: block; 
+}
+
+/* The header of the normal result */
+.per_bst_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.per-bst-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.per-bst-logo{
+    width: 40px;
+}
+
+.per-bst-logo-writeup{
+    display: none;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.per-bst-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.per-bst-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.per-bst-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.per-bst-personal-best-image{
+    width: 30px;
+}
+
+.per-bst-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the Normal result */
+.per-bst-main-page{
+    margin-top: 50px;
+}
+
+.per-bst-star2{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 30px;
+}
+
+.per-bst-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.per-bst-checkmrk{
+    width: 40px;
+}
+
+.per-bst-h2{
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
+
+.per-bst-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.per-bst-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 35px;
+    
+}
+
+.per-bst-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.per-bst-wpm-fig{
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.per-bst-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.per-bst-accu-fig{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.per-bst-per{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 25px;
+}
+
+.per-bst-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90vw;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    font-size: 20px;
+}
+
+.per-bst-char-fig{
+    color: hsl(140, 63%, 57%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.per-bst-restart-btn{
+    min-width: 40vw;
+    display: flex;
+    flex-wrap: none;
+    padding: 15px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.per-bst-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.per-bst-star1{
+    margin-right: 2%;
+    margin-top: 10%;
+    width: 40px;
+}
+
+.confetti-img{
+    width: 100%;
+    margin-top: -30%;
+}
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 940px) {
+    /* TYPING SECTION */
+
+.typing_section{
+    display: block; 
+}
+
+.typing_section.active{
+    display: none;
+}
+
+/* The header */
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Left part of the header */
+.logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.logo{
+    width: 40px;
+}
+
+.logo-writeup{
+    display: none;
+}
+
+
+/* Right part of the header */
+.personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.personal-class{
+    display: none;
+}
+
+.personal-best-image{
+    width: 30px;
+}
+
+.personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Second header */
+.sub-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid hsl(240, 1%, 59%);
+    margin-bottom: 30px;
+    height: 145px;
+}
+
+/* Left side of the second header */
+.timer-wpm-accu{
+    display: flex; 
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Word per Minutes */
+.wpm{
+    border-right: 1px solid hsl(240, 1%, 59%);
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 4px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.wpm-fig{
+    font-size: 19px;
+    color: #ffff;
+    font-family: "MyBoldFont", sans-serif;
+   
+}
+
+/* Accuracy */
+.accu{
+    border-right: 1px solid hsl(240, 1%, 59%);
+    padding: 10px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 4px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 150px;
+    margin-left: -20px;
+    margin-top: -3px;
+    
+}
+
+.accu-fig{
+    font-size: 19px;
+    color: hsl(354, 63%, 57%);
+    font-family: "MyBoldFont", sans-serif;
+}
+
+.per{
+    font-size: 19px;
+    color: hsl(354, 63%, 57%);
+    font-family: "MyBoldFont", sans-serif;
+    margin-top: -26px;
+    margin-left: 40px;
+}
+
+/* Timer */
+.timer{
+    padding: 10px;
+    height: 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: hsl(240, 1%, 59%);
+    gap: 4px;
+    font-family: "MyCustomFont", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: -10px;
+    margin-top: -5px;
+}
+
+.timer-fig{
+    font-size: 19px;
+    color: hsl(49, 85%, 70%);
+    font-family: "MyBoldFont", sans-serif;
+}
+
+/* Right side of the second header */
+.diffi-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+/* Difficulty */
+.difficulty{
+    display: flex;
+    color: #fff;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.difficulty-p{
+    display: none;
+    font-family: "MyBoldFont", sans-serif;
+    margin-right: 10px;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.diffi-btns{
+    display: flex;
+    gap: 10px;
+    border-right: none;
+    margin-right: 10px;
+}
+
+/* Difficulty buttons */
+
+.easy{
+    padding: 2px;
+    font-size: 12px;
+    width: 45px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.easy:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+.medium{
+    padding: 2px;
+    font-size: 12px;
+    width: 55px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.medium:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+.hard{
+    display: none;
+}
+
+/* Dropdown for Difficulty */
+.dropdown_diffi{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown_diffi_btn{
+    padding: 6px;
+    font-size: 16px;
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.selection-arrow{
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.dropdown_diffi_menu {
+  display: none;
+  flex-direction: row;
+  position: absolute;
+
+  background: #222;
+
+  border-radius: 12px;
+  min-width: 40%;
+  margin-top: 40px;
+}
+
+.dropdown_diffi_menu.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu button {
+  font-family: "MyBoldFont", sans-serif;
+  background: transparent;
+  width: 100%;
+  border: none;
+
+  color: white;
+
+  padding: 15px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid #333;
+}
+
+
+.option{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+.option:last-child{
+    border-bottom: none;
+}
+
+.option:hover{
+    background: #333;
+}
+
+.option input{
+    display: none;
+}
+
+.radio{
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    position: relative;
+    background: hsl(214, 100%, 55%);
+}
+
+.option input:checked + .radio:after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hard:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+/* Dropdown for Mode*/
+.dropdown_mode{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown_mode_btn{
+    padding: 6px;
+    font-size: 16px;
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+}
+
+
+.dropdown_mode_menu {
+  display: none;
+  flex-direction: row;
+  position: absolute;
+
+  background: #222;
+
+  border-radius: 12px;
+
+  width: 40%;
+
+  margin-top: 40px;
+}
+
+.dropdown_mode_menu.active {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.option_mod{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+.option_mod:last-child{
+    border-bottom: none;
+}
+
+.option_mod:hover{
+    background: #333;
+}
+
+.option_mod input{
+    display: none;
+}
+
+.radio_mod{
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    position: relative;
+    background: hsl(214, 100%, 55%);
+}
+
+.option_mod input:checked + .radio_mod:after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* NOT REALLY IMPORTANT BUT USEFULL */
+/* Mode */
+.mode{
+    display: flex;
+    color: #fff;
+    font-family: "MyCustomFont", sans-serif;
+    align-items: center;
+}
+
+.mode-p{
+    display: none;
+    font-family: "MyBoldFont", sans-serif;
+    margin-right: 10px;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.mode-btns{
+    display: none;
+    gap: 10px;
+    margin-right: 10px;
+    
+}
+
+.mode-btns.active{
+   margin-top: 10px;
+}
+
+
+/* TIMED READER */
+.timed{
+    padding: 6px;
+    font-size: 15px;
+    width: 150px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.timed:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+.sec-int{
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px;
+
+    transition: all 0.5s ease-in;
+}
+
+.sec-int.active{
+    display: flex;
+}
+
+
+
+.passage{
+    padding: 3px;
+    font-size: 12px;
+    width: 100px;
+    height: 22px;
+    border-radius: 4.5px;
+    border: 1px solid hsl(240, 1%, 59%);
+    background-color: hsl(0, 0%, 7%);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.passage:hover{
+    border: 1px solid hsl(214, 100%, 55%);
+    color: hsl(214, 100%, 55%);
+}
+
+
+
+/* Restart button */
+.restart-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 5px;
+    font-family: "MySemiBoldFont", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: hsl(240, 3%, 46%);
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* Overlay (Intro Screen) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(5px);     
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.active{
+    display: none;
+    overflow: scroll;
+}
+
+
+.start-box {
+  text-align: center;
+  font-family: "MySemiBoldFont", sans-serif;
+  margin-top: -10%;
+}
+
+.start-btn-p{
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+    
+}
+
+.start-btn {
+  background: #3b82f6;
+  padding: 12px 24px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  
+}
+
+
+
+/* FIRST RESULT PAGE */
+
+
+.first_result_section{
+    display: none; 
+}
+
+.first_result_section.active{
+    display: block; 
+}
+
+/* The header of the first result */
+.fst_res_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.fst-res-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.fst-res-logo{
+    width: 40px;
+}
+
+.fst-res-logo-writeup{
+    display: none;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.fst-res-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.fst-res-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.fst-res-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.fst-res-personal-best-image{
+    width: 30px;
+}
+
+.fst-res-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the first result */
+.fst-res-main-page{
+    margin-top: 50px;
+}
+
+.fst-res-star2{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 30px;
+}
+
+.fst-res-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.fst-res-checkmrk{
+    width: 40px;
+}
+
+.fst-res-h2{
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
+
+.fst-res-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.fst-res-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 35px;
+    
+}
+
+.fst-res-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.fst-res-wpm-fig{
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.fst-res-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.fst-res-accu-fig{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.fst-res-per{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 25px;
+}
+
+.fst-res-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90vw;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    font-size: 20px;
+}
+
+.fst-res-char-fig{
+    color: hsl(140, 63%, 57%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.fst-res-restart-btn{
+    min-width: 50vw;
+    display: flex;
+    flex-wrap: none;
+    padding: 15px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.fst-res-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.fst-res-star1{
+    margin-right: 2%;
+    margin-top: 10%;
+    width: 40px;
+}
+
+/* NORMAL RESULT PAGE */
+.result_section{
+    display: none; 
+}
+
+.result_section.active{
+    display: block; 
+}
+
+/* The header of the normal result */
+.res_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.res-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.res-logo{
+    width: 40px;
+}
+
+.res-logo-writeup{
+    display: none;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.res-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.res-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.res-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.res-personal-best-image{
+    width: 30px;
+}
+
+.res-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the Normal result */
+.res-main-page{
+    margin-top: 50px;
+}
+
+.res-star2{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 30px;
+}
+
+.res-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.res-checkmrk{
+    width: 40px;
+}
+
+.res-h2{
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
+
+.res-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.res-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 35px;
+    
+}
+
+.res-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.res-wpm-fig{
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.res-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.res-accu-fig{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.res-per{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 25px;
+}
+
+.res-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90vw;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    font-size: 20px;
+}
+
+.res-char-fig{
+    color: hsl(140, 63%, 57%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.res-restart-btn{
+    min-width: 40vw;
+    display: flex;
+    flex-wrap: none;
+    padding: 15px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.res-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.res-star1{
+    margin-right: 2%;
+    margin-top: 10%;
+    width: 40px;
+}
+
+/* PERSONAL BEST / HIGHSCORE PAGE  */
+
+.personal_best_section{
+    display: none; 
+}
+
+.personal_best_section.active{
+    display: block; 
+}
+
+/* The header of the normal result */
+.per_bst_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left part of the header */
+.per-bst-logo-and-writeup{
+    display: flex;
+    gap: 5px;
+}
+
+.per-bst-logo{
+    width: 40px;
+}
+
+.per-bst-logo-writeup{
+    display: none;
+    flex-direction: column;
+    font-family: "MyCustomFont", sans-serif;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.per-bst-logo-wrtup-h1{
+    color: #fff;
+    font-size: 25px;
+}
+
+.per-bst-logo-wrtup-p{
+    color: hsl(240, 1%, 59%);
+    font-size: 13px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+}
+
+/* Right part of the header */
+.per-bst-personal-best{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.per-bst-personal-best-image{
+    width: 30px;
+}
+
+.per-bst-personal-best-p{
+    font-size: 20px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+}
+
+.numb{
+    color: #fff;
+}
+
+/* Main page of the Normal result */
+.per-bst-main-page{
+    margin-top: 50px;
+}
+
+.per-bst-star2{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 30px;
+}
+
+.per-bst-wrtup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px;
+    font-family: "MyCustomFont", sans-serif;
+}
+
+.outer-circle{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 100, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-circle{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #266d40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+}
+
+.per-bst-checkmrk{
+    width: 40px;
+}
+
+.per-bst-h2{
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
+
+.per-bst-p{
+    font-size: 15px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 500;
+    color: hsl(240, 1%, 59%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.per-bst-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 35px;
+    
+}
+
+.per-bst-wpm{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.per-bst-wpm-fig{
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.per-bst-accu{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 80px;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    width: 90vw;
+    font-size: 20px;
+}
+
+.per-bst-accu-fig{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.per-bst-per{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -27px;
+    margin-left: 25px;
+}
+
+.per-bst-character{
+    border: 0.5px solid hsl(240, 1%, 59%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 90vw;
+    color: hsl(240, 1%, 59%);
+    font-weight: 600;
+    font-family: "MyBoldFont",sans-serif;
+    font-size: 20px;
+}
+
+.per-bst-char-fig{
+    color: hsl(140, 63%, 57%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.correct-char{
+    color: lightgreen;
+}
+
+.slash{
+    color: grey;
+}
+
+.wrong-char{
+    color: red;
+}
+
+
+.per-bst-restart-btn{
+    min-width: 40vw;
+    display: flex;
+    flex-wrap: none;
+    padding: 15px;
+    gap: 5px;
+    font-family: "MyBoldFont", sans-serif;
+    font-weight: 600;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border-radius: 3.5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.per-bst-star1-div{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.per-bst-star1{
+    margin-right: 2%;
+    margin-top: 10%;
+    width: 40px;
+}
+
+.confetti-img{
+    width: 100%;
+    margin-top: -30%;
+}
+}
