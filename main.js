@@ -18,7 +18,6 @@ startBtn.onclick = () => {
 }
 
 let difficultyChosen = false;
-
 let timeChosen = false;  
 
 /* Restart Button */
@@ -672,7 +671,7 @@ const hiddenInput = document.getElementById("hiddenInput");
 
 hiddenInput.addEventListener("input", (e) => {
 
-  const key = e.data;
+  const key = e.target.value.slice(-1);
 
   
 
@@ -684,7 +683,7 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
 
-    hiddenInput.focus({ preventScroll: true });
+    hiddenInput.focus();
 
   }
 
