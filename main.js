@@ -681,7 +681,7 @@ hiddenInput.addEventListener("input", (e) => {
 
 function checkSelections() {
 
-  if (difficultyChosen && timeChosen === true) {
+  if (difficultyChosen && timeChosen) {
 
     hiddenInput.focus();
 
