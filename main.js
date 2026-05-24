@@ -204,10 +204,7 @@ firstSec.addEventListener("click", () => {
   setTime(60);
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
-  timeChosen = true;
-  if (difficultyChosen) {
-    hiddenInput.focus();
-  }
+  
 
 });
 
@@ -216,10 +213,7 @@ secondSec.addEventListener("click", () => {
   setTime(30);
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
-  timeChosen = true;
-  if (difficultyChosen) {
-    hiddenInput.focus();
-  }
+  
 
 });
 
@@ -229,10 +223,7 @@ threeSec.addEventListener("click", () => {
   setTime(15);
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
-  timeChosen = true;
-  if (difficultyChosen) {
-    hiddenInput.focus();
-  }
+  
 
   
 });
@@ -635,14 +626,21 @@ options.forEach(option => {
 
     if(mode === "easyMob") {
       loadTextEasy();
+
+      difficultyChosen = true;
+      checkSelections();
     }
 
     else if(mode === "mediumMob"){
       loadTextMedium();
+      difficultyChosen = true;
+      checkSelections();
     }
 
     else if(mode === "hardMob") {
       loadTextHard();
+      difficultyChosen = true;
+      checkSelections();
     }
 
   })
@@ -668,19 +666,43 @@ optionsMode.forEach(option => {
 
     if(mode === "sixtySec") {
       setTime(60);
+      timeChosen = true;
+
+      checkSelections();
+
     }
 
     else if(mode === "thirtySec"){
       setTime(30);
+      timeChosen = true;
+
+      checkSelections();
+
     }
 
     else if(mode === "fifteenSec") {
       setTime(15);
+      timeChosen = true;
+
+      checkSelections();
+
     }
 
   })
 
 })
+
+function checkSelections() {
+
+  if (difficultyChosen && timeChosen) {
+
+    hiddenInput.focus();
+
+    hiddenInput.click();
+
+  }
+
+}
 
 const hiddenInput = document.getElementById("hiddenInput");
 
@@ -689,8 +711,6 @@ const hiddenInput = document.getElementById("hiddenInput");
 function handleTyping(key) {
    if(time === 0 && started) return;
 
-  // ignore keys like Shift, Ctrl, etc
-  if (key.length > 1 && key !== "Backspace") return;
 
   
 
@@ -797,7 +817,9 @@ function handleTyping(key) {
 let index = 0;
 
 document.addEventListener("keydown", (e) => {
+  // ignore keys like Shift, Ctrl, etc
   const key = e.key;
+  if (key.length > 1 && key !== "Backspace") return;
   e.preventDefault();
   
   handleTyping(e.key);
