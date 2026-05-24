@@ -14,7 +14,7 @@ const restartBtn = document.getElementById("restartBtn");
 startBtn.onclick = () => {
   overLay.classList.add("active");
   document.body.classList.remove("no-scroll");
-  hiddenInput.focus({ preventScroll: true });
+  hiddenInput.focus();
 }
 
 let difficultyChosen = false;
