@@ -698,7 +698,7 @@ function checkSelections() {
 
     hiddenInput.focus();
 
-    hiddenInput.click();
+    /* hiddenInput.click(); */
 
   }
 
