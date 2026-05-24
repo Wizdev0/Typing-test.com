@@ -669,13 +669,13 @@ optionsMode.forEach(option => {
 
 const hiddenInput = document.getElementById("hiddenInput");
 
-hiddenInput.addEventListener("input", (e) => {
+/* hiddenInput.addEventListener("input", (e) => {
 
   const key = e.target.value.slice(-1);
 
   
 
-});
+}); */
 
 
 
