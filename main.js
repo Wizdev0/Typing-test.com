@@ -112,7 +112,9 @@ easyBtn.addEventListener("click", () =>{
   loadTextEasy();
   resetTest();
   difficultyChosen = true;
-  checkSelections();
+  if(timeChosen) {
+    hiddenInput.focus();
+  }
 
 
 });
@@ -135,7 +137,9 @@ mediumBtn.addEventListener("click", () => {
   resetTest();
   loadTextMedium();
   difficultyChosen = true;
-  checkSelections();
+  if(timeChosen) {
+    hiddenInput.focus();
+  }
 });
 
 /* HARD MODE */
@@ -155,7 +159,9 @@ hardBtn.addEventListener("click", () => {
   resetTest();
   loadTextHard();
   difficultyChosen = true;
-  checkSelections();
+  if(timeChosen) {
+    hiddenInput.focus();
+  }
 });
 
 
@@ -199,7 +205,10 @@ firstSec.addEventListener("click", () => {
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
   timeChosen = true;
-  checkSelections();
+  if (difficultyChosen) {
+    hiddenInput.focus();
+  }
+
 });
 
 
@@ -208,7 +217,10 @@ secondSec.addEventListener("click", () => {
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
   timeChosen = true;
-  checkSelections();
+  if (difficultyChosen) {
+    hiddenInput.focus();
+  }
+
 });
 
 
@@ -218,7 +230,10 @@ threeSec.addEventListener("click", () => {
   secInt.classList.remove("active");
   modeBtns.classList.remove("active");
   timeChosen = true;
-  checkSelections();
+  if (difficultyChosen) {
+    hiddenInput.focus();
+  }
+
   
 });
 
@@ -669,36 +684,10 @@ optionsMode.forEach(option => {
 
 const hiddenInput = document.getElementById("hiddenInput");
 
-hiddenInput.addEventListener("input", (e) => {
 
-  const key = e.target.value.slice(-1);
-
-  
-
-});
-
-
-
-function checkSelections() {
-
-  if (difficultyChosen && timeChosen) {
-
-    hiddenInput.focus();
-
-  }
-
-}
-
-/* Typing Area */
-
-let index = 0;
-
-document.addEventListener("keydown", (e) => {
-  const key = e.key;
-  e.preventDefault();
-  
-
-  if(time === 0 && started) return;
+/* Handling typing function */
+function handleTyping(key) {
+   if(time === 0 && started) return;
 
   // ignore keys like Shift, Ctrl, etc
   if (key.length > 1 && key !== "Backspace") return;
@@ -800,6 +789,28 @@ document.addEventListener("keydown", (e) => {
   calculateCharacters();
   calculateCharacters2();
   calculateCharacters3();
+
+}
+
+/* Typing Area for desktop */
+
+let index = 0;
+
+document.addEventListener("keydown", (e) => {
+  const key = e.key;
+  e.preventDefault();
+  
+  handleTyping(e.key);
+ 
+});
+
+/* Typing Area for mobile */
+hiddenInput.addEventListener("input", (e) => {
+
+  const key = e.target.value.slice(-1);
+  handleTyping(key);
+  e.target.value = "";
+  
 
 });
 
