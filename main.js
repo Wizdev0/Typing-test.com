@@ -14,7 +14,7 @@ const restartBtn = document.getElementById("restartBtn");
 startBtn.onclick = () => {
   overLay.classList.add("active");
   document.body.classList.remove("no-scroll");
-  hiddenInput.focus();
+  
 }
 
 let difficultyChosen = false;
@@ -681,7 +681,7 @@ const hiddenInput = document.getElementById("hiddenInput");
 
 function checkSelections() {
 
-  if (difficultyChosen && timeChosen) {
+  if (difficultyChosen && timeChosen === true) {
 
     hiddenInput.focus();
 
