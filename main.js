@@ -605,6 +605,11 @@ function finishTest() {
 const dropdown = document.querySelector(".dropdown_diffi_menu");
 const btn = document.querySelector(".dropdown_diffi_btn");
 
+/* function to remove the dropdown and not toggle */
+function removeDropDownDiffi() {
+  dropdown.classList.remove("active");
+}
+
 btn.addEventListener("click", () => {
   dropdown.classList.toggle("active");
 });
@@ -613,8 +618,9 @@ const options = document.querySelectorAll(".option input");
 
 options.forEach(option => {
   option.addEventListener("change", () => {
-    btn.firstChild.textContent =
-      option.parentElement.textContent.trim();
+    btn.firstChild.textContent = option.parentElement.textContent.trim();
+    difficultyChosen = true;
+    /* checkSelections(); */
   });
 });
 
@@ -626,19 +632,21 @@ options.forEach(option => {
 
     if(mode === "easyMob") {
       loadTextEasy();
-
+      removeDropDownDiffi();
       difficultyChosen = true;
       checkSelections();
     }
 
     else if(mode === "mediumMob"){
       loadTextMedium();
+      removeDropDownDiffi();
       difficultyChosen = true;
       checkSelections();
     }
 
     else if(mode === "hardMob") {
       loadTextHard();
+      removeDropDownDiffi();
       difficultyChosen = true;
       checkSelections();
     }
@@ -647,12 +655,20 @@ options.forEach(option => {
 
 })
 
+
+
 /* Dropdown for time */
 const dropdownMode = document.querySelector(".dropdown_mode_menu");
 const btnMode = document.querySelector(".dropdown_mode_btn");
 
+/* function to remove the dropdown and not toggle */
+function removeDropDownMode() {
+  dropdownMode.classList.remove("active");
+}
+
 btnMode.addEventListener("click", () => {
   dropdownMode.classList.toggle("active");
+  
 });
 
 const optionsMode = document.querySelectorAll(".option_mod input");
@@ -666,14 +682,15 @@ optionsMode.forEach(option => {
 
     if(mode === "sixtySec") {
       setTime(60);
+      removeDropDownMode();
       timeChosen = true;
 
       checkSelections();
-
     }
 
     else if(mode === "thirtySec"){
       setTime(30);
+      removeDropDownMode();
       timeChosen = true;
 
       checkSelections();
@@ -682,6 +699,7 @@ optionsMode.forEach(option => {
 
     else if(mode === "fifteenSec") {
       setTime(15);
+      removeDropDownMode();
       timeChosen = true;
 
       checkSelections();
@@ -705,7 +723,9 @@ function checkSelections() {
 }
 
 const hiddenInput = document.getElementById("hiddenInput");
-
+hiddenInput.addEventListener("focus", () => {
+  console.log("Input focused");
+});
 
 /* Handling typing function */
 function handleTyping(key) {
