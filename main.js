@@ -778,17 +778,6 @@ function handleTyping(key) {
   index++;
 
 
-  const textRect = textpasssage.getBoundingClientRect();
-
-if (textRect.bottom > window.innerHeight - 250) {
-
-  window.scrollBy({
-    top: 80,
-    behavior: "smooth"
-  });
-
-}
-
   if(index === letters.length) {
     
     finishTest();
