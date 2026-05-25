@@ -112,9 +112,7 @@ easyBtn.addEventListener("click", () =>{
   loadTextEasy();
   resetTest();
   difficultyChosen = true;
-  if(timeChosen) {
-    hiddenInput.focus();
-  }
+  
 
 
 });
@@ -137,9 +135,7 @@ mediumBtn.addEventListener("click", () => {
   resetTest();
   loadTextMedium();
   difficultyChosen = true;
-  if(timeChosen) {
-    hiddenInput.focus();
-  }
+  
 });
 
 /* HARD MODE */
@@ -158,10 +154,7 @@ hardBtn.addEventListener("click", () => {
     
   resetTest();
   loadTextHard();
-  difficultyChosen = true;
-  if(timeChosen) {
-    hiddenInput.focus();
-  }
+  
 });
 
 
@@ -714,7 +707,7 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
 
-    hiddenInput.focus();
+    hiddenInput.focus({ preventScroll: true });
 
     /* hiddenInput.click(); */
 
@@ -723,9 +716,9 @@ function checkSelections() {
 }
 
 const hiddenInput = document.getElementById("hiddenInput");
-hiddenInput.addEventListener("focus", () => {
+/* hiddenInput.addEventListener("focus", () => {
   console.log("Input focused");
-});
+}); */
 
 /* Handling typing function */
 function handleTyping(key) {
@@ -787,8 +780,7 @@ function handleTyping(key) {
 
   letters[index]?.scrollIntoView({
     behavior: "smooth",
-    block: "center",
-    inline: "nearest"
+    block: "center"
   });
 
   if(index === letters.length) {
