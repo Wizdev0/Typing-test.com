@@ -396,7 +396,7 @@ body.no-scroll{
 #hiddenInput{
   
   position: fixed;
-  top: 0;
+  top: -100px;
   left: 0;
   opacity: 0;
   pointer-events: none;
