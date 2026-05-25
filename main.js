@@ -824,6 +824,10 @@ function handleTyping(key) {
 let index = 0;
 
 document.addEventListener("keydown", (e) => {
+
+    // Ignore mobile keyboard
+  if (document.activeElement === hiddenInput) return;
+
   // ignore keys like Shift, Ctrl, etc
   const key = e.key;
   if (key.length > 1 && key !== "Backspace") return;
