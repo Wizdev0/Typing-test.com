@@ -842,36 +842,18 @@ document.addEventListener("keydown", (e) => {
  
 });
 
-let previousValue = "";
+
 
 /* Typing Area for mobile */
 hiddenInput.addEventListener("input", (e) => {
 
-  /* const key = e.data;
-  handleTyping(key); */
+  const key = e.data;
+  handleTyping(key);
 
-    const currentValue = e.target.value;
-
-  // BACKSPACE
-  if (currentValue.length < previousValue.length) {
-
-    handleTyping("Backspace");
-
-  } 
-  
-  // NORMAL TYPING
-  else {
-
-    const key = currentValue.slice(-1);
-
-    handleTyping(key);
-
-  }
-
-  previousValue = currentValue;
   
 
 });
+
 
 
 
