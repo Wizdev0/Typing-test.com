@@ -708,7 +708,10 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
 
-    hiddenInput.focus();
+    setTimeout(() => {
+      hiddenInput.focus();
+    }, 100);
+
 
     /* hiddenInput.click(); */
 

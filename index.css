@@ -6,6 +6,7 @@
 
 body{
     background-color: hsl(0, 0%, 7%);
+    overflow-anchor: none;
 }
 
 body.no-scroll{
@@ -395,10 +396,14 @@ body.no-scroll{
 
 #hiddenInput{
   
-  position: fixed;
-  bottom: -1000px;
+ position: absolute;
   opacity: 0;
-  pointer-events: none;
+  height: 0;
+  width: 0;
+  border: none;
+  padding: 0;
+  left: -9999px;
+
 }
 
 
