@@ -707,7 +707,7 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
 
-    hiddenInput.focus();
+    hiddenInput.focus({ preventScroll: true });
 
     /* hiddenInput.click(); */
 
