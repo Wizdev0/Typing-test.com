@@ -561,7 +561,7 @@ function finishTest() {
   clearInterval(interval);
   started = false;
 
-
+  resetMobileInput();
   const currentWPM = calculateWPM();
 
   const savedHighScore = Number(localStorage.getItem("highScore")) || 0;
@@ -841,7 +841,6 @@ document.addEventListener("keydown", (e) => {
  
 });
 
-let previousValue = "";
 
 
 /* Typing Area for mobile */
@@ -851,22 +850,29 @@ hiddenInput.addEventListener("input", (e) => {
   if (e.inputType === "deleteContentBackward") {
 
     handleTyping("Backspace");
-
+    return;
   } 
+
+  const key = e.data;
   
-  // NORMAL KEYS
-  else {
+  if(!key) {
 
-    const key = e.target.value;
+    const value = e.target.value;
+    if (value.length > 0) {
+      handleTyping(value.charAt(value.length - 1));
+    }
 
-    handleTyping(key);
+    return;
 
   }
 
-  // Clear input after every key
-  e.target.value = "";
+  handleTyping(key);
 
 });
+
+function resetMobileInput() {
+  hiddenInput.value = "";
+}
 
 
 
