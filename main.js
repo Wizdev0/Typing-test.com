@@ -841,12 +841,25 @@ document.addEventListener("keydown", (e) => {
  
 });
 
+let previousValue = "";
+
+
 /* Typing Area for mobile */
 hiddenInput.addEventListener("input", (e) => {
 
-  const key = e.target.value.slice(-1);
-  handleTyping(key);
-  e.target.value = "";
+  const currentValue = e.target.value;
+
+  /* Backspace */
+  if (currentValue.length < previousValue.length) {
+    handleTyping("Backspace");
+  }
+
+  else{
+    const key = currentValue.slice(-1);
+    handleTyping(key);
+  }
+
+  previousValue = currentValue;
   
 
 });
