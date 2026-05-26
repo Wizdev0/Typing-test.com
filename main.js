@@ -653,6 +653,7 @@ options.forEach(option => {
 /* Dropdown for time */
 const dropdownMode = document.querySelector(".dropdown_mode_menu");
 const btnMode = document.querySelector(".dropdown_mode_btn");
+const hiddenInput = document.getElementById("hiddenInput");
 
 /* function to remove the dropdown and not toggle */
 function removeDropDownMode() {
@@ -707,7 +708,7 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
 
-    hiddenInput.focus({ preventScroll: true });
+    hiddenInput.focus();
 
     /* hiddenInput.click(); */
 
@@ -715,7 +716,7 @@ function checkSelections() {
 
 }
 
-const hiddenInput = document.getElementById("hiddenInput");
+
 /* hiddenInput.addEventListener("focus", () => {
   console.log("Input focused");
 }); */
