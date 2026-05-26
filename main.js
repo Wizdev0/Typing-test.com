@@ -848,7 +848,8 @@ document.addEventListener("keydown", (e) => {
 hiddenInput.addEventListener("input", (e) => {
 
   const key = e.data;
-  
+  handleTyping(key);
+
   // 🔙 handle backspace
   if (key === "Backspace") {
     if (index > 0) {
