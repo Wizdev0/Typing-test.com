@@ -561,7 +561,6 @@ function finishTest() {
   clearInterval(interval);
   started = false;
 
-  resetMobileInput();
   const currentWPM = calculateWPM();
 
   const savedHighScore = Number(localStorage.getItem("highScore")) || 0;
@@ -724,6 +723,8 @@ function checkSelections() {
   console.log("Input focused");
 }); */
 
+let index = 0;
+
 /* Handling typing function */
 function handleTyping(key) {
    if(time === 0 && started) return;
@@ -825,7 +826,7 @@ function handleTyping(key) {
 
 /* Typing Area for desktop */
 
-let index = 0;
+
 
 document.addEventListener("keydown", (e) => {
 
@@ -846,33 +847,21 @@ document.addEventListener("keydown", (e) => {
 /* Typing Area for mobile */
 hiddenInput.addEventListener("input", (e) => {
 
-  // BACKSPACE
-  if (e.inputType === "deleteContentBackward") {
-
-    handleTyping("Backspace");
-    return;
-  } 
-
   const key = e.data;
   
-  if(!key) {
-
-    const value = e.target.value;
-    if (value.length > 0) {
-      handleTyping(value.charAt(value.length - 1));
+  // 🔙 handle backspace
+  if (key === "Backspace") {
+    if (index > 0) {
+      index--;
+      letters[index].style.color = "";
+      letters[index].style.textDecoration = "none";
     }
-
     return;
-
   }
-
-  handleTyping(key);
 
 });
 
-function resetMobileInput() {
-  hiddenInput.value = "";
-}
+
 
 
 
