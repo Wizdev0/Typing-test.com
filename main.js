@@ -850,15 +850,7 @@ hiddenInput.addEventListener("input", (e) => {
   const key = e.data;
   handleTyping(key);
 
-  // 🔙 handle backspace
-  if (key === "Backspace") {
-    if (index > 0) {
-      index--;
-      letters[index].style.color = "";
-      letters[index].style.textDecoration = "none";
-    }
-    return;
-  }
+  
 
 });
 
