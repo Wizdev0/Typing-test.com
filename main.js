@@ -847,20 +847,24 @@ let previousValue = "";
 /* Typing Area for mobile */
 hiddenInput.addEventListener("input", (e) => {
 
-  const currentValue = e.target.value;
+  // BACKSPACE
+  if (e.inputType === "deleteContentBackward") {
 
-  /* Backspace */
-  if (currentValue.length < previousValue.length) {
     handleTyping("Backspace");
-  }
 
-  else{
-    const key = currentValue.slice(-1);
-    handleTyping(key);
-  }
-
-  previousValue = currentValue;
+  } 
   
+  // NORMAL KEYS
+  else {
+
+    const key = e.target.value;
+
+    handleTyping(key);
+
+  }
+
+  // Clear input after every key
+  e.target.value = "";
 
 });
 
