@@ -879,13 +879,16 @@ hiddenInput.addEventListener("input", (e) => {
   // NORMAL TYPING
   else {
 
-    const key = currentValue.slice(-1);
+    const key = currentValue[currentValue.length - 1];
 
     /* console.log("Typed:", key); */
 
     handleTyping(key);
-
+    /* console.log(currentValue);
+    console.log(key); */
   }
+
+  
 
   previousValue = currentValue;
 
