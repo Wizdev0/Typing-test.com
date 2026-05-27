@@ -861,36 +861,54 @@ document.addEventListener("keydown", (e) => {
 
 let previousValue = "";
 
-hiddenInput.addEventListener("input", (e) => {
+hiddenInput.addEventListener("beforeinput", (e) => {
 
-  const currentValue = e.target.value;
-  /* console.log("Current:", currentValue);
+  /* const currentValue = e.target.value;
+  console.log("Current:", currentValue);
   console.log("Previous:", previousValue); */
 
   // BACKSPACE
-  if (currentValue.length < previousValue.length) {
-    /* console.log("BACKSPACE DETECTED"); */
+  /* if (currentValue.length < previousValue.length) {
+    console.log("BACKSPACE DETECTED");
 
 
     handleTyping("deleteContentBackward");
 
-  } 
+  }  */
   
   // NORMAL TYPING
-  else {
+  /* else {
 
     const key = currentValue[currentValue.length - 1];
 
-    /* console.log("Typed:", key); */
+    console.log("Typed:", key);
 
     handleTyping(key);
-    /* console.log(currentValue);
-    console.log(key); */
+    console.log(currentValue);
+    console.log(key);
   }
 
   
 
   previousValue = currentValue;
+ */
+
+
+  // BACKSPACE
+  if (e.inputType === "deleteContentBackward") {
+
+    handleTyping("Backspace");
+    return;
+
+  }
+
+  // NORMAL KEY
+  if (e.data) {
+
+    handleTyping(e.data);
+
+  }
+
 
 });
 
