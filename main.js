@@ -736,13 +736,17 @@ function handleTyping(key) {
 
   // 🔙 handle backspace
   if (key === "Backspace") {
-    if (index > 0) {
-      index--;
-      letters[index].style.color = "";
-      letters[index].style.textDecoration = "none";
-    }
-    return;
+
+  if (index > 0) {
+
+    index--;
+
+    letters[index].removeAttribute("style");
+
   }
+
+  return;
+}
 
   /* Start timer when a User types the first key */
   if (!started) {
@@ -860,21 +864,33 @@ document.addEventListener("keydown", (e) => {
 let previousValue = "";
 
 hiddenInput.addEventListener("input", (e) => {
-  
-  const currentValue = e.target.value; 
-  const data = e.data;
 
-  if (e.inputType === "deleteContentBackward" || e.inputType === "deleteContentForward") {
+  const currentValue = e.target.value;
+
+
+  // BACKSPACE
+  if (currentValue.length < previousValue.length) {
+
+
     handleTyping("Backspace");
+
   } 
- 
-  else if (data) {
-    const key = data.slice(-1);
+  
+  // NORMAL TYPING
+  else {
+
+    const key = currentValue.slice(-1);
+
+
     handleTyping(key);
+
   }
 
   previousValue = currentValue;
+
 });
+
+
 
 
 
