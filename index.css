@@ -1300,7 +1300,6 @@ span.active {
 
 /* Left side of the second header */
 .timer-wpm-accu{
-    position: sticky;
     display: flex; 
     gap: 20px;
     justify-content: center;

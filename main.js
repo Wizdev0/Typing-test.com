@@ -845,13 +845,35 @@ document.addEventListener("keydown", (e) => {
 
 
 /* Typing Area for mobile */
-hiddenInput.addEventListener("input", (e) => {
+/* hiddenInput.addEventListener("input", (e) => {
 
   const key = e.data;
   handleTyping(key);
+  
+ 
 
   
 
+}); */
+
+
+let previousValue = "";
+
+hiddenInput.addEventListener("input", (e) => {
+  
+  const currentValue = e.target.value; 
+  const data = e.data;
+
+  if (e.inputType === "deleteContentBackward" || e.inputType === "deleteContentForward") {
+    handleTyping("Backspace");
+  } 
+ 
+  else if (data) {
+    const key = data.slice(-1);
+    handleTyping(key);
+  }
+
+  previousValue = currentValue;
 });
 
 
