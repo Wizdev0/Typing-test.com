@@ -10,163 +10,165 @@
 </head>
 <body class="no-scroll"> 
     <section class="typing_section" id="typingSection">
-    
-        <!-- Header -->
-        <div class="head">
+        
+        <div class="top-fixed">
+            <!-- Header -->
+            <div class="head">
 
-            <!-- Left part of the header -->
-            <div class="logo-and-writeup">
+                <!-- Left part of the header -->
+                <div class="logo-and-writeup">
 
-                <img src="Assets/images/logo-small.svg" alt="Image of a keyboard" class="logo">
+                    <img src="Assets/images/logo-small.svg" alt="Image of a keyboard" class="logo">
 
-                <div class="logo-writeup">
-                    <h1 class="logo-wrtup-h1">
-                        Typing Speed Test
-                    </h1>
-                    <p class="logo-wrtup-p">
-                        Type as fast as you can in 60 seconds
+                    <div class="logo-writeup">
+                        <h1 class="logo-wrtup-h1">
+                            Typing Speed Test
+                        </h1>
+                        <p class="logo-wrtup-p">
+                            Type as fast as you can in 60 seconds
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Right part of the header -->
+                <div class="personal-best">
+
+                    <img src="Assets/images/icon-personal-best.svg" alt="" class="personal-best-image">
+
+                    <p class="personal-best-p"> <span class="personal-class">Personal</span>
+                        best: <span class="numb" id="bestNumb">00</span> <span class="per-2">WPM</span>
                     </p>
+
                 </div>
 
             </div>
 
-            <!-- Right part of the header -->
-            <div class="personal-best">
+            <!-- Second header -->
+            <div class="sub-header">
 
-                <img src="Assets/images/icon-personal-best.svg" alt="" class="personal-best-image">
+                <!-- Left side of the second-header -->
+                <div class="timer-wpm-accu">
 
-                <p class="personal-best-p"> <span class="personal-class">Personal</span>
-                     best: <span class="numb" id="bestNumb">00</span> <span class="per-2">WPM</span>
-                </p>
+                    <p class="wpm">
+                        WPM: <span class="wpm-fig" id="wpmFig">00</span>
+                    </p>
 
-            </div>
+                    <p class="accu">
+                        Accuracy: <span class="accu-fig" id="accuFig">0</span>
+                    </p>
 
-        </div>
+                    <p class="timer">
+                        Time: <span class="timer-fig">0:<span class="sec" id="sec">00</span></span>
+                    </p>
 
-        <!-- Second header -->
-        <div class="sub-header">
-
-            <!-- Left side of the second-header -->
-            <div class="timer-wpm-accu">
-
-                <p class="wpm">
-                    WPM: <span class="wpm-fig" id="wpmFig">00</span>
-                </p>
-
-                <p class="accu">
-                    Accuracy: <span class="accu-fig" id="accuFig">0</span>
-                </p>
-
-                <p class="timer">
-                    Time: <span class="timer-fig">0:<span class="sec" id="sec">00</span></span>
-                </p>
-
-            </div>
-
-            <!-- Right side of the second header -->
-            <div class="diffi-mode">
-
-                <div class="difficulty">
-                    <p class="difficulty-p">Difficulty:</p>
-                    <div class="diffi-btns">
-                        <button class="easy" id="easy_btn">Easy</button>
-                        <button class="medium" id="medium_btn">Medium</button>
-
-                        <button class="hard" id="hard_btn">Hard</button>
-
-                            <!-- Mobile buttons dropdown for difficulty -->
-
-                            <div class="dropdown_diffi">
-
-                                <button class="dropdown_diffi_btn">
-                                    Hard <span><img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></span>
-                                </button>
-
-                                <div class="dropdown_diffi_menu">
-
-
-                                    <label class="option">
-                                        <input type="radio" name="difficulty" id="rad1" data-mode="easyMob">
-                                        <span class="radio"></span>
-                                        Easy
-                                    </label>
-                            
-
-
-                                    <label class="option">
-                                        <input type="radio" name="difficulty" id="rad2" data-mode="mediumMob">
-                                        <span class="radio"></span>
-                                        Medium
-                                    </label>
-
-
-                                    <label class="option">
-                                        <input type="radio" name="difficulty" id="rad1" data-mode="hardMob">
-                                        <span class="radio"></span>
-                                        Hard
-                                    </label>
-
-                                </div>
-
-                            </div>
-                    </div>
                 </div>
 
-                <div class="mode">
-                    <p class="mode-p">Mode:</p>
-                    <div class="mode-btns">
-                
-                            <div class="timed-reader">
-                                <button class="timed" id="timed">Timed <img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></button>
+                <!-- Right side of the second header -->
+                <div class="diffi-mode">
 
-                                <div class="sec-int">
-                                    <button class="one-sec-mk" id="oneSecMk">60 Sec</button>
-                                    <button class="two-sec-mk" id="twoSecMk">30 Sec</button>
-                                    <button class="three-sec-mk" id="threeSecMk">15 Sec</button>
+                    <div class="difficulty">
+                        <p class="difficulty-p">Difficulty:</p>
+                        <div class="diffi-btns">
+                            <button class="easy" id="easy_btn">Easy</button>
+                            <button class="medium" id="medium_btn">Medium</button>
+
+                            <button class="hard" id="hard_btn">Hard</button>
+
+                                <!-- Mobile buttons dropdown for difficulty -->
+
+                                <div class="dropdown_diffi">
+
+                                    <button class="dropdown_diffi_btn">
+                                        Hard <span><img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></span>
+                                    </button>
+
+                                    <div class="dropdown_diffi_menu">
+
+
+                                        <label class="option">
+                                            <input type="radio" name="difficulty" id="rad1" data-mode="easyMob">
+                                            <span class="radio"></span>
+                                            Easy
+                                        </label>
+                                
+
+
+                                        <label class="option">
+                                            <input type="radio" name="difficulty" id="rad2" data-mode="mediumMob">
+                                            <span class="radio"></span>
+                                            Medium
+                                        </label>
+
+
+                                        <label class="option">
+                                            <input type="radio" name="difficulty" id="rad1" data-mode="hardMob">
+                                            <span class="radio"></span>
+                                            Hard
+                                        </label>
+
+                                    </div>
+
                                 </div>
-
-                            </div>
-
-                        <button class="passage" id="passage">Passage</button>
+                        </div>
                     </div>
 
-                            <div class="dropdown_mode">
+                    <div class="mode">
+                        <p class="mode-p">Mode:</p>
+                        <div class="mode-btns">
+                    
+                                <div class="timed-reader">
+                                    <button class="timed" id="timed">Timed <img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></button>
 
-                                <button class="dropdown_mode_btn">
-                                    Timed <span><img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></span>
-                                </button>
-
-                                <div class="dropdown_mode_menu">
-
-
-                                    <label class="option_mod">
-                                        <input type="radio" name="mode" id="mod1" data-mode="sixtySec">
-                                        <span class="radio_mod"></span>
-                                        60 sec
-                                    </label>
-                            
-
-
-                                    <label class="option_mod">
-                                        <input type="radio" name="mode" id="mod2" data-mode="thirtySec">
-                                        <span class="radio_mod"></span>
-                                        30 sec
-                                    </label>
-
-
-                                    <label class="option_mod">
-                                        <input type="radio" name="mode" id="mod2" data-mode="fifteenSec">
-                                        <span class="radio_mod"></span>
-                                        15 sec
-                                    </label>
+                                    <div class="sec-int">
+                                        <button class="one-sec-mk" id="oneSecMk">60 Sec</button>
+                                        <button class="two-sec-mk" id="twoSecMk">30 Sec</button>
+                                        <button class="three-sec-mk" id="threeSecMk">15 Sec</button>
+                                    </div>
 
                                 </div>
 
-                            </div>
+                            <button class="passage" id="passage">Passage</button>
+                        </div>
 
-                </div>
+                                <div class="dropdown_mode">
 
-            </div> 
+                                    <button class="dropdown_mode_btn">
+                                        Timed <span><img src="Assets/images/icon-down-arrow.svg" alt="drop down arrow" class="selection-arrow"></span>
+                                    </button>
+
+                                    <div class="dropdown_mode_menu">
+
+
+                                        <label class="option_mod">
+                                            <input type="radio" name="mode" id="mod1" data-mode="sixtySec">
+                                            <span class="radio_mod"></span>
+                                            60 sec
+                                        </label>
+                                
+
+
+                                        <label class="option_mod">
+                                            <input type="radio" name="mode" id="mod2" data-mode="thirtySec">
+                                            <span class="radio_mod"></span>
+                                            30 sec
+                                        </label>
+
+
+                                        <label class="option_mod">
+                                            <input type="radio" name="mode" id="mod2" data-mode="fifteenSec">
+                                            <span class="radio_mod"></span>
+                                            15 sec
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                    </div>
+
+                </div> 
+            </div>
 
         </div>
 

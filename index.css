@@ -405,7 +405,7 @@ body.no-scroll{
   width: 0;
   border: none;
   padding: 0;
-  left: -9999px;
+  left: 0;
 
 }
 
@@ -1225,11 +1225,28 @@ span.active {
 /* MOBILE SCREEN SIZE */
 @media only screen and (max-width: 600px) {
     
+    
+
+.top-fixed{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: block;
+    background-color: hsl(0, 0%, 7%);
+    margin-bottom: 5%;
+}
+
+.main{
+    height: 30vh;
+    overflow-y: auto;
+    padding-bottom: 250px;
+}
 
 /* TYPING SECTION */
 
 .typing_section{
     display: block; 
+    overflow: hidden;
 }
 
 .typing_section.active{
@@ -1767,7 +1784,7 @@ html{
 /* Overlay (Intro Screen) */
 .overlay {
   position: fixed;
-  top: 0;
+  top: 25%;
   left: 0;
   width: 100%;
   height: 100%;

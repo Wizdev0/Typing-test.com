@@ -627,6 +627,7 @@ options.forEach(option => {
       removeDropDownDiffi();
       difficultyChosen = true;
       checkSelections();
+      resetTest();
     }
 
     else if(mode === "mediumMob"){
@@ -634,6 +635,7 @@ options.forEach(option => {
       removeDropDownDiffi();
       difficultyChosen = true;
       checkSelections();
+      resetTest();
     }
 
     else if(mode === "hardMob") {
@@ -641,6 +643,7 @@ options.forEach(option => {
       removeDropDownDiffi();
       difficultyChosen = true;
       checkSelections();
+      resetTest();
     }
 
   })
@@ -707,12 +710,8 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
 
-    setTimeout(() => {
-      hiddenInput.focus();
-    }, 100);
+    hiddenInput.focus();
 
-
-    /* hiddenInput.click(); */
 
   }
 
@@ -784,6 +783,10 @@ function handleTyping(key) {
   // move forward
   index++;
 
+  letters[index]?.scrollIntoView({
+  behavior: "smooth",
+  block: "center"
+});
 
   if(index === letters.length) {
     
@@ -847,51 +850,8 @@ document.addEventListener("keydown", (e) => {
 
 
 /* Typing Area for mobile */
-/* hiddenInput.addEventListener("input", (e) => {
-
-  const key = e.data;
-  handleTyping(key);
-  
- 
-
-  
-
-}); */
-
-
-let previousValue = "";
 
 hiddenInput.addEventListener("beforeinput", (e) => {
-
-  /* const currentValue = e.target.value;
-  console.log("Current:", currentValue);
-  console.log("Previous:", previousValue); */
-
-  // BACKSPACE
-  /* if (currentValue.length < previousValue.length) {
-    console.log("BACKSPACE DETECTED");
-
-
-    handleTyping("deleteContentBackward");
-
-  }  */
-  
-  // NORMAL TYPING
-  /* else {
-
-    const key = currentValue[currentValue.length - 1];
-
-    console.log("Typed:", key);
-
-    handleTyping(key);
-    console.log(currentValue);
-    console.log(key);
-  }
-
-  
-
-  previousValue = currentValue;
- */
 
 
   // BACKSPACE
