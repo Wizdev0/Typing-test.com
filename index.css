@@ -9,9 +9,6 @@ body{
     overflow-anchor: none;
 }
 
-body.no-scroll{
-    overflow: hidden;
-}
 
 /* My font family */
 @font-face {
@@ -401,8 +398,8 @@ body.no-scroll{
   
  position: absolute;
   opacity: 0;
-  height: 1px;
-  width: 1px;
+  height: 0;
+  width: 0;
   border: none;
   padding: 0;
   left: -9999px;
@@ -1227,23 +1224,30 @@ span.active {
     
 
 .top-fixed{
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+
     z-index: 1000;
-    display: block;
     background-color: hsl(0, 0%, 7%);
-    margin-bottom: 5%;
+    padding-top: 1rem;
 }
 
 .main{
-    height: 60vh;
-    overflow: auto;
-    padding-bottom: 250px;
+    margin-top: 70%;
+
+    height: calc(100vh - 140px);
+
+    overflow-y: auto;
+
+    padding-bottom: 300px;
+
 }
 
-.text{
+/* .text{
     overflow-y: hidden;
-}
+} */
 
 /* TYPING SECTION */
 
@@ -1473,9 +1477,16 @@ span.active {
     display: none;
 }
 
-html{
-    scroll-behavior: smooth;
+.lock-scroll{
+    overflow: hidden;
+    height: 100vh;
 }
+
+/* html,
+body{
+    height: 100%;
+    overflow: hidden;
+} */
 
 .medium:hover{
     border: 1px solid hsl(214, 100%, 55%);

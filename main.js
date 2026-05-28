@@ -374,7 +374,7 @@ function showFirstResultPage() {
   firstResSec.classList.add("active");
   normResSec.classList.remove("active");
   personalBstSec.classList.remove("active");
-  document.body.classList.remove("no-scroll");
+  document.body.classList.remove("lock-scroll");
 }
 
 /* RESTART BUTTON */
@@ -456,6 +456,7 @@ function showNormalResult() {
   firstPage.classList.add("active");
   firstResSec.classList.remove("active");
   personalBstSec.classList.remove("active");
+  document.body.classList.remove("lock-scroll");
 }
 
 /* NORMAL RESULT BUTTON */
@@ -538,6 +539,7 @@ function showPersonalBestPage() {
   firstPage.classList.add("active");
   firstResSec.classList.remove("active");
   personalBstSec.classList.add("active");
+  document.body.classList.remove("lock-scroll");
 }
 
 /* NORMAL RESULT BUTTON */
@@ -709,7 +711,7 @@ optionsMode.forEach(option => {
 function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
-
+    document.body.classList.add("lock-scroll");
     hiddenInput.focus();
 
 
