@@ -405,7 +405,7 @@ body.no-scroll{
   width: 0;
   border: none;
   padding: 0;
-  left: 0;
+  left: -9999px;
 
 }
 
@@ -1225,9 +1225,6 @@ span.active {
 /* MOBILE SCREEN SIZE */
 @media only screen and (max-width: 600px) {
     
-    body {
-        overflow: hidden;
-    }
 
 .top-fixed{
     position: sticky;
@@ -1240,8 +1237,12 @@ span.active {
 
 .main{
     height: 45vh;
-    overflow-y: auto;
+    overflow: auto;
     padding-bottom: 250px;
+}
+
+.text{
+    overflow-y: auto;
 }
 
 /* TYPING SECTION */

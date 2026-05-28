@@ -783,10 +783,24 @@ function handleTyping(key) {
   // move forward
   index++;
 
-  letters[index]?.scrollIntoView({
-  behavior: "smooth",
-  block: "center"
-});
+  const target = letters[index];
+
+  if (target) {
+  const rect = target.getBoundingClientRect();
+
+  // Only scroll UP if element goes too low on screen
+  if (rect.bottom > window.innerHeight - 150) {
+    window.scrollBy({
+      top: 50,
+      behavior: "auto"
+    });
+  }
+}
+
+  /* letters[index]?.scrollIntoView({
+    behavior: "auto",
+    block: "center"
+  }); */
 
   if(index === letters.length) {
     
