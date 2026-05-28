@@ -861,9 +861,6 @@ document.addEventListener("keydown", (e) => {
  
 });
 
-function dontMove() {
-  firstPage.style.overflow = "hidden";
-}
 
 /* Typing Area for mobile */
 
@@ -882,7 +879,7 @@ hiddenInput.addEventListener("beforeinput", (e) => {
   if (e.data) {
 
     handleTyping(e.data);
-    dontMove();
+    
 
   }
 
