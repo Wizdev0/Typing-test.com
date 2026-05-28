@@ -1236,13 +1236,13 @@ span.active {
 }
 
 .main{
-    height: 45vh;
+    height: 50vh;
     overflow: auto;
     padding-bottom: 250px;
 }
 
 .text{
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 /* TYPING SECTION */
