@@ -396,13 +396,19 @@ body{
 
 #hiddenInput{
   
- position: absolute;
+ /* position: absolute;
   opacity: 0;
   height: 0;
   width: 0;
   border: none;
   padding: 0;
-  left: -9999px;
+  left: -9999px; */
+  
+    position: fixed;
+    bottom: -100px;
+    opacity: 0;
+    pointer-events: none;
+
 
 }
 
@@ -1235,13 +1241,26 @@ span.active {
 }
 
 .main{
-    margin-top: 70%;
+    /* margin-top: 70%;
 
     height: calc(100vh - 140px);
 
     overflow-y: auto;
 
-    padding-bottom: 300px;
+    padding-bottom: 300px; */
+
+    position: fixed;
+    top: 250px;
+    left: 0;
+    width: 100%;
+
+    bottom: 0;
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 220px;
 
 }
 
@@ -1253,7 +1272,7 @@ span.active {
 
 .typing_section{
     display: block; 
-    overflow: hidden;
+    
 }
 
 .typing_section.active{

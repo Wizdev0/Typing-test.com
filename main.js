@@ -712,7 +712,7 @@ function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
     document.body.classList.add("lock-scroll");
-    hiddenInput.focus();
+    hiddenInput.focus( {preventScroll: true} );
 
 
   }
