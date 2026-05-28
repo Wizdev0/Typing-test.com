@@ -711,7 +711,7 @@ optionsMode.forEach(option => {
 function checkSelections() {
 
   if (difficultyChosen && timeChosen) {
-    document.body.classList.add("lock-scroll");
+    
     hiddenInput.focus( {preventScroll: true} );
 
 
@@ -879,7 +879,7 @@ hiddenInput.addEventListener("beforeinput", (e) => {
 
   // NORMAL KEY
   if (e.data) {
-
+    document.body.classList.add("lock-scroll");
     handleTyping(e.data);
     
 
