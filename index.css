@@ -1237,7 +1237,7 @@ span.active {
 }
 
 .main{
-    height: 30vh;
+    height: 45vh;
     overflow-y: auto;
     padding-bottom: 250px;
 }
