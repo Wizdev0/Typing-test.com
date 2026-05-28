@@ -1225,7 +1225,9 @@ span.active {
 /* MOBILE SCREEN SIZE */
 @media only screen and (max-width: 600px) {
     
-    
+    body {
+        overflow: hidden;
+    }
 
 .top-fixed{
     position: sticky;
