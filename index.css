@@ -1497,8 +1497,8 @@ span.active {
 }
 
 .lock-scroll{
-    overflow: hidden;
-    height: 100vh;
+    overflow-y: hidden;
+    height: 50vh;
 }
 
 /* html,
