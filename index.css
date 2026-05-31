@@ -1253,7 +1253,7 @@ span.active {
     top: 250px;
     left: 0;
     width: 100%;
-
+    height: calc(100vh - 170px);
     bottom: 0;
 
     overflow-y: auto;
@@ -1497,8 +1497,8 @@ span.active {
 }
 
 .lock-scroll{
-    overflow-y: hidden;
-    height: 50vh;
+    overflow: hidden;
+    height: 30vh;
 }
 
 /* html,
