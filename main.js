@@ -799,12 +799,10 @@ function handleTyping(key) {
   }
 }
 
-  const currentLetter = letters[index];
-
-  currentLetter.scrollIntoView({
-    block: "center",
-    behavior: "smooth"
-  });
+  /* letters[index]?.scrollIntoView({
+    behavior: "auto",
+    block: "center"
+  }); */
 
   if(index === letters.length) {
     
@@ -882,7 +880,7 @@ hiddenInput.addEventListener("beforeinput", (e) => {
   // NORMAL KEY
   if (e.data) {
     handleTyping(e.data);
-    
+    hiddenInput.focus( {preventScroll: true} );
 
   }
 
