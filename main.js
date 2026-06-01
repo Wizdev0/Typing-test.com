@@ -751,7 +751,7 @@ function handleTyping(key) {
   if (!started) {
     started = true;
 
-    time = originalTime;
+    /* time = originalTime;
 
     timer.innerText = String(time).padStart(2, "0");
 
@@ -766,7 +766,7 @@ function handleTyping(key) {
         finishTest();
       } 
 
-    }, 1000);
+    }, 1000); */
   }
 
   
@@ -880,7 +880,7 @@ hiddenInput.addEventListener("beforeinput", (e) => {
   // NORMAL KEY
   if (e.data) {
     handleTyping(e.data);
-    hiddenInput.focus( {preventScroll: true} );
+    
 
   }
 
