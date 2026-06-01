@@ -751,7 +751,7 @@ function handleTyping(key) {
   if (!started) {
     started = true;
 
-    /* time = originalTime;
+    time = originalTime;
 
     timer.innerText = String(time).padStart(2, "0");
 
@@ -766,7 +766,7 @@ function handleTyping(key) {
         finishTest();
       } 
 
-    }, 1000); */
+    }, 1000);
   }
 
   
@@ -867,7 +867,7 @@ document.addEventListener("keydown", (e) => {
 /* Typing Area for mobile */
 
 hiddenInput.addEventListener("beforeinput", (e) => {
-
+  
 
   // BACKSPACE
   if (e.inputType === "deleteContentBackward") {
@@ -886,6 +886,8 @@ hiddenInput.addEventListener("beforeinput", (e) => {
 
 
 });
+
+
 
 
 
