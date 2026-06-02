@@ -1235,23 +1235,17 @@ span.active {
     top: 0;
     left: 0;
     width: 100%;
-
     z-index: 1000;
     background-color: hsl(0, 0%, 7%);
-    padding-top: 1rem;
+    padding-top: 0.2rem;
+    height: 33%;
 }
 
 .main{
-    /* margin-top: 70%;
-
-    height: calc(100vh - 140px);
-
-    overflow-y: auto;
-
-    padding-bottom: 300px; */
+    
 
     position: fixed;
-    top: 250px;
+    top: 210px;
     left: 0;
     width: 100%;
 

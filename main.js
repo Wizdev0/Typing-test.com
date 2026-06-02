@@ -273,7 +273,7 @@ function calculateAccuracy() {
 
   return Math.round((correct / index) * 100);
 
- /* return accuracy; */
+ 
 }
 
 /* Knowing the new or personal best */
